@@ -50,15 +50,16 @@
             txtbDisplay.PlaceholderText = "1,2;0,1";
             txtbDisplay.Size = new Size(633, 31);
             txtbDisplay.TabIndex = 0;
+            txtbDisplay.KeyPress += txtbDisplay_KeyPress;
             // 
             // label1
             // 
             label1.AutoSize = true;
             label1.Location = new Point(101, 61);
             label1.Name = "label1";
-            label1.Size = new Size(130, 25);
+            label1.Size = new Size(318, 25);
             label1.TabIndex = 1;
-            label1.Text = "Ingresar Matriz";
+            label1.Text = "Ingresar Matriz, y agregar con un Enter";
             // 
             // label2
             // 
