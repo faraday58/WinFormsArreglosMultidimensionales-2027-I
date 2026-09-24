@@ -14,7 +14,7 @@ namespace WinFormsArreglosMultidimensionales_2027_I
 
         private void txtbDisplay_KeyPress(object sender, KeyPressEventArgs e)
         {
-            if ( e.KeyChar == (char)Keys.Enter   )
+            if (e.KeyChar == (char)Keys.Enter)
             {
                 if (!changeMatrix)
                 {
@@ -31,6 +31,24 @@ namespace WinFormsArreglosMultidimensionales_2027_I
 
 
             }
+        }
+
+        private void btnAdd_Click(object sender, EventArgs e)
+        {
+            m3 = m1 + m2;
+            lbResult.Text = m3.ToString();
+        }
+
+        private void btnSin_Click(object sender, EventArgs e)
+        {
+            if (rdbDeg.Checked)
+            {
+                lbResult.Text = "Seno de Result en Sexagesimal: ";
+            }else if (rdbRad.Checked)
+            {
+                lbResult.Text = "Seno de Result en Radianes: ";
+            }
+
         }
     }
 }

@@ -41,6 +41,9 @@
             btnSubstraction = new Button();
             btnMultiply = new Button();
             btnTranspose = new Button();
+            btnSin = new Button();
+            rdbDeg = new RadioButton();
+            rdbRad = new RadioButton();
             SuspendLayout();
             // 
             // txtbDisplay
@@ -138,6 +141,7 @@
             btnAdd.TabIndex = 2;
             btnAdd.Text = "+";
             btnAdd.UseVisualStyleBackColor = true;
+            btnAdd.Click += btnAdd_Click;
             // 
             // btnSubstraction
             // 
@@ -162,18 +166,54 @@
             // btnTranspose
             // 
             btnTranspose.Font = new Font("Showcard Gothic", 14F, FontStyle.Bold, GraphicsUnit.Point, 0);
-            btnTranspose.Location = new Point(759, 473);
+            btnTranspose.Location = new Point(716, 473);
             btnTranspose.Name = "btnTranspose";
             btnTranspose.Size = new Size(278, 83);
             btnTranspose.TabIndex = 2;
             btnTranspose.Text = "Transpuesta";
             btnTranspose.UseVisualStyleBackColor = true;
             // 
+            // btnSin
+            // 
+            btnSin.Font = new Font("Showcard Gothic", 14F, FontStyle.Bold, GraphicsUnit.Point, 0);
+            btnSin.Location = new Point(716, 598);
+            btnSin.Name = "btnSin";
+            btnSin.Size = new Size(278, 83);
+            btnSin.TabIndex = 2;
+            btnSin.Text = "Seno";
+            btnSin.UseVisualStyleBackColor = true;
+            btnSin.Click += btnSin_Click;
+            // 
+            // rdbDeg
+            // 
+            rdbDeg.AutoSize = true;
+            rdbDeg.Location = new Point(1094, 574);
+            rdbDeg.Name = "rdbDeg";
+            rdbDeg.Size = new Size(70, 29);
+            rdbDeg.TabIndex = 3;
+            rdbDeg.TabStop = true;
+            rdbDeg.Text = "Deg";
+            rdbDeg.UseVisualStyleBackColor = true;
+            // 
+            // rdbRad
+            // 
+            rdbRad.AutoSize = true;
+            rdbRad.Location = new Point(1094, 629);
+            rdbRad.Name = "rdbRad";
+            rdbRad.Size = new Size(68, 29);
+            rdbRad.TabIndex = 3;
+            rdbRad.TabStop = true;
+            rdbRad.Text = "Rad";
+            rdbRad.UseVisualStyleBackColor = true;
+            // 
             // Form1
             // 
             AutoScaleDimensions = new SizeF(10F, 25F);
             AutoScaleMode = AutoScaleMode.Font;
             ClientSize = new Size(1347, 746);
+            Controls.Add(rdbRad);
+            Controls.Add(rdbDeg);
+            Controls.Add(btnSin);
             Controls.Add(btnTranspose);
             Controls.Add(btnMultiply);
             Controls.Add(btnSubstraction);
@@ -208,5 +248,8 @@
         private Button btnSubstraction;
         private Button btnMultiply;
         private Button btnTranspose;
+        private Button btnSin;
+        private RadioButton rdbDeg;
+        private RadioButton rdbRad;
     }
 }
