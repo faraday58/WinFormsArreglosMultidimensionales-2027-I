@@ -28,6 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
+            components = new System.ComponentModel.Container();
             txtbDisplay = new TextBox();
             label1 = new Label();
             label2 = new Label();
@@ -44,6 +45,12 @@
             btnSin = new Button();
             rdbDeg = new RadioButton();
             rdbRad = new RadioButton();
+            errorProvider1 = new ErrorProvider(components);
+            errorProvider2 = new ErrorProvider(components);
+            errorProvider3 = new ErrorProvider(components);
+            ((System.ComponentModel.ISupportInitialize)errorProvider1).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)errorProvider2).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)errorProvider3).BeginInit();
             SuspendLayout();
             // 
             // txtbDisplay
@@ -206,6 +213,18 @@
             rdbRad.Text = "Rad";
             rdbRad.UseVisualStyleBackColor = true;
             // 
+            // errorProvider1
+            // 
+            errorProvider1.ContainerControl = this;
+            // 
+            // errorProvider2
+            // 
+            errorProvider2.ContainerControl = this;
+            // 
+            // errorProvider3
+            // 
+            errorProvider3.ContainerControl = this;
+            // 
             // Form1
             // 
             AutoScaleDimensions = new SizeF(10F, 25F);
@@ -229,6 +248,9 @@
             Controls.Add(txtbDisplay);
             Name = "Form1";
             Text = "Form1";
+            ((System.ComponentModel.ISupportInitialize)errorProvider1).EndInit();
+            ((System.ComponentModel.ISupportInitialize)errorProvider2).EndInit();
+            ((System.ComponentModel.ISupportInitialize)errorProvider3).EndInit();
             ResumeLayout(false);
             PerformLayout();
         }
@@ -251,5 +273,8 @@
         private Button btnSin;
         private RadioButton rdbDeg;
         private RadioButton rdbRad;
+        private ErrorProvider errorProvider1;
+        private ErrorProvider errorProvider2;
+        private ErrorProvider errorProvider3;
     }
 }

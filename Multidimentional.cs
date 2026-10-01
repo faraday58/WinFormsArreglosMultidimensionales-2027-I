@@ -27,6 +27,7 @@ namespace WinFormsArreglosMultidimensionales_2027_I
             for(int i = 0; i < m1.M; i++)
             {
                 columns = rows[i].Split(',');
+
                 for (int j= 0; j < m1.N; j++)
                 {
                     m1.A[i, j] = float.Parse(columns[j]);

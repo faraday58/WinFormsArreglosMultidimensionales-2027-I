@@ -2,6 +2,7 @@ namespace WinFormsArreglosMultidimensionales_2027_I
 {
     public partial class Form1 : Form
     {
+        ErrorProvider errorProvider;
         Multidimentional m1;
         Multidimentional m2;
         Multidimentional m3;
@@ -9,6 +10,7 @@ namespace WinFormsArreglosMultidimensionales_2027_I
 
         public Form1()
         {
+             errorProvider= new ErrorProvider();
             InitializeComponent();
         }
 
@@ -16,19 +18,47 @@ namespace WinFormsArreglosMultidimensionales_2027_I
         {
             if (e.KeyChar == (char)Keys.Enter)
             {
-                if (!changeMatrix)
+                try
                 {
-                    m1 = Multidimentional.Read(txtbDisplay.Text);
-                    lbMatrix1.Text = m1.ToString();
-                    changeMatrix = true;
+                    if (!changeMatrix)
+                    {
+                        if(  txtbDisplay.Text == ""  )
+                        {
+                            string error = "Debes de ingresar una matriz";
+                            throw new ApplicationException(error);
+                        }
+                        m1 = Multidimentional.Read(txtbDisplay.Text);
+                        lbMatrix1.Text = m1.ToString();
+                        changeMatrix = true;
+
+                    }
+                    else
+                    {
+                        if (txtbDisplay.Text == "")
+                        {
+                            string error = "Debes de ingresar una matriz";
+                            throw new ApplicationException(error);
+                        }
+
+                        m2 = Multidimentional.Read(txtbDisplay.Text);
+                        lbMatrix2.Text = m2.ToString();
+                        changeMatrix = false;
+                    }
+
+                    this.errorProvider.Clear();
                 }
-                else
+                catch (ApplicationException ex)
                 {
-                    m2 = Multidimentional.Read(txtbDisplay.Text);
-                    lbMatrix2.Text = m2.ToString();
-                    changeMatrix = false;
+                    this.errorProvider.SetError(txtbDisplay, ex.Message);
                 }
 
+                catch (FormatException ex ) {
+                    MessageBox.Show( "El formato de entrada es incorrecto " );
+                }
+                catch(Exception ex) 
+                {
+                    MessageBox.Show("¡Ups!, hay un error " + ex.Message);
+                }
 
             }
         }
